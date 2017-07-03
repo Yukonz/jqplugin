@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>
+        jQuery Test Plugin
+    </title>
+    <script src="js/jquery-3.2.1.min.js"></script>
+    <script src="js/jquery-ui.min.js"></script>
+    <script src="js/colorize.plugin.js"></script>
+</head>
+<body>
+
+<hr>
+
+<div id="text2" style="color: darkslategrey; font-size: 40px">
+    Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+    Natus animi nobis, nostrum, alias magni quos quaerat accusantium
+    temporibus nesciunt quo blanditiis reprehenderit delectus repellat
+    distinctio, sequi labore commodi facilis, ab.
+</div>
+
+<hr>
+
+<div id="text3" style="color: darkslategrey; font-size: 40px">
+    Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+    Natus animi nobis, nostrum, alias magni quos quaerat accusantium
+    temporibus nesciunt quo blanditiis reprehenderit delectus repellat
+    distinctio, sequi labore commodi facilis, ab.
+</div>
+
+
+<button id="start">START</button>
+<button id="cycle_color">CYCLED</button>
+<button id="cycle">START IN CYCLE</button>
+<button id="stop">STOP</button>
+<button id="restart">RESTART</button>
+<button id="restart_cycle">RESTART IN CYCLE</button>
+<button id="remove">REMOVE COLOR</button>
+
+<hr>
+
+<button id="start2">START</button>
+<button id="cycle_color2">CYCLED</button>
+<button id="cycle2">START IN CYCLE</button>
+<button id="stop2">STOP</button>
+<button id="restart2">RESTART</button>
+<button id="restart_cycle2">RESTART IN CYCLE</button>
+<button id="remove2">REMOVE COLOR</button>
+
+</body>
+    <script>
+        $(document).ready(function(){
+
+            $('#start').on('click',function(){
+                $('#text2').colorize();
+                $('#text2').colorize('stopCycle');
+                $('#text2').colorize('setColor', {colors: ['orange', 'blue', 'yellow', 'red'], delay: 1000});
+            });
+
+            $('#cycle_color').on('click',function(){
+                $('#text2').colorize('cycleColor');
+            });
+
+            $('#cycle').on('click',function(){
+                $('#text2').colorize();
+                $('#text2').colorize('stopCycle');
+                $('#text2').colorize('setColorInCycle', {colors: ['orange', 'blue', 'yellow', 'cyan'], delay: 500});
+            });
+
+            $('#stop').on('click',function(){
+                $('#text2').colorize('stopCycle');
+            });
+
+            $('#restart').on('click',function(){
+                $('#text2').colorize('resetColor', {colors: ['red', 'green', 'blue', 'magenta'], delay: 500});
+            });
+
+            $('#restart_cycle').on('click',function(){
+                $('#text2').colorize('resetColorCycle', {colors: ['red', 'green', 'blue', 'magenta']});
+            });
+
+            $('#remove').on('click',function(){
+                $('#text2').colorize('removeColor');
+            });
+
+
+
+
+
+
+            $('#start2').on('click',function(){
+                $('#text3').colorize();
+                $('#text3').colorize('stopCycle');
+                $('#text3').colorize('setColor', {colors: ['orange', 'blue', 'yellow', 'red'], delay: 1000});
+            });
+
+            $('#cycle_color2').on('click',function(){
+                $('#text3').colorize('cycleColor');
+            });
+
+            $('#cycle2').on('click',function(){
+                $('#text3').colorize();
+                $('#text3').colorize('stopCycle');
+                $('#text3').colorize('setColorInCycle', {colors: ['orange', 'blue', 'yellow', 'cyan'], delay: 500});
+            });
+
+            $('#stop2').on('click',function(){
+                $('#text3').colorize('stopCycle');
+            });
+
+            $('#restart2').on('click',function(){
+                $('#text3').colorize('resetColor', {colors: ['red', 'green', 'blue', 'magenta'], delay: 500});
+            });
+
+            $('#restart_cycle2').on('click',function(){
+                $('#text3').colorize('resetColorCycle', {colors: ['red', 'green', 'blue', 'magenta']});
+            });
+
+            $('#remove2').on('click',function(){
+                $('#text3').colorize('removeColor');
+            });
+
+        });
+    </script>
+</html>
