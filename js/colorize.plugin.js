@@ -1,7 +1,7 @@
 $.widget('plg.colorize', {
 
     options: {
-        color: ['red'],
+        colors: ['red'],
         delay: 1000
     },
 
@@ -11,6 +11,10 @@ $.widget('plg.colorize', {
     },
 
     setColor: function(options) {
+        if (options === undefined) {
+            options = this.options;
+        }
+
         var self = this,
             colorsCount = options.colors.length,
             i = 0;
